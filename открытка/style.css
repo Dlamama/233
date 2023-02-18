@@ -28,10 +28,6 @@ img {
     width: 100%;
 }
 
-.wrapper {
-    min-height: 100%;
-}
-
 h1,
 h2,
 h3,
@@ -42,11 +38,13 @@ h6 {
 }
 
 .wrapper {
+    min-height: 100%;
     background: url(content/img/bg2.jpg) no-repeat center/cover;
     height: 100vh;
     display: flex;
     overflow: hidden;
     padding: 23px;
+    align-items: center;
 }
 
 .header {
@@ -58,6 +56,8 @@ h6 {
     width: 100%;
 
     padding: 50px;
+    opacity: 0;
+    animation: opacity 2s forwards;
 }
 
 .container__action {
@@ -73,6 +73,8 @@ h6 {
 
 .action__text {
     font-family: 'Shantell Sans', cursive;
+    animation: scale 2s forwards;
+    transform: scale(0);
 }
 
 .fire__content {
@@ -87,4 +89,31 @@ h6 {
 
 .fire {
     flex: 1;
+}
+
+.fire__content {
+    animation: slidein 5s infinite alternate;
+}
+
+@keyframes slidein {
+    from {
+        width: 100%;
+    }
+
+    to {
+
+        width: 150%;
+    }
+}
+
+@keyframes opacity {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    100% {
+        transform: scale(1);
+    }
 }
